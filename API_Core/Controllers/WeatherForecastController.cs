@@ -16,6 +16,28 @@ namespace API_Core.Controllers
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
+        [HttpGet]
+        public ActionResult<IEnumerable<string>> ObterValores()
+        { 
+            var valores = new string[] { "value1", "value2" };
+
+            if (valores.Length < 5000)
+               return BadRequest();
+
+            return valores;
+        }
+
+        [HttpGet]
+        public ActionResult ObterResultado()
+        {
+            var valores = new string[] { "value1", "value2" };
+
+            if (valores.Length < 5000)
+                return BadRequest();
+
+            return Ok(valores);
+        }
+
         private readonly ILogger<WeatherForecastController> _logger;
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
