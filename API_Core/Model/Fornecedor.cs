@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace API_Core.Model
 {
-    public class FornecedorViewModel
+    public class Fornecedor
     {
         [Key]
         public Guid Id { get; set; }
